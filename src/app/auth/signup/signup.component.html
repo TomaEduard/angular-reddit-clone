@@ -26,7 +26,7 @@
                                     autofocus
                                 >
                                 <!-- show email error -->
-                                <span *ngIf="signupForm.get('email').valid && signupForm.get('email').touched">
+                                <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
                                     Please provide a valid email.
                                 </span>
                             </div>
@@ -41,7 +41,7 @@
                                     class="form-control" required autofocus
                                 >
                                 <!-- show username error -->
-                                <span *ngIf="signupForm.get('username').valid && signupForm.get('username').touched">
+                                <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
                                     Please provide a valid username.
                                 </span>
                             </div>
@@ -60,7 +60,7 @@
                                     name="password" required
                                 >
                                 <!-- show username error -->
-                                <span *ngIf="signupForm.get('password').valid && signupForm.get('password').touched">
+                                <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
                                     Please provide a valid password.
                                 </span>                                
                             </div>
@@ -70,7 +70,7 @@
                             <button type="submit" class="sign-up">
                                 Sign Up
                             </button>
-                            <span style="padding-left: 15px">Existing user? <a routerLink="/login">Log In</a></span>
+                            <span style="padding-left: 12px">Existing user? <a routerLink="/login">Log In</a></span>
                         </span>
                     </form>
 

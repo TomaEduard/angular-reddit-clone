@@ -1,4 +1,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~ngx-toastr/toastr.css";
 
 input.ng-invalid.ng-touched {
     border: 1px solid red;
