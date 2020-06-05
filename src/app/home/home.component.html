@@ -1,28 +1,23 @@
 <div class="reddit-body">
     <div class="container">
-        <div class="row">
-            <hr />
+      <div class="row">
+        <hr />
 
-            <div class="col-md-9">
+        <div class="col-md-9 pt-3">
 
-                <!-- Display Posts -->
-                <div class="row post" *ngFor='let post of posts$'>
-
-                    <!-- Section to Display Votes -->
-                    <div class="col-md-1">
-                        <div class="d-flex flex-column votebox">
-                            
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-3">
-
-            </div>
+            <!-- Display Posts-->
+            <app-post-tile></app-post-tile>
 
         </div>
+
+        <div class="col-md-3 pt-3">
+
+            <app-side-bar></app-side-bar>
+            <app-subreddit-side-bar></app-subreddit-side-bar>
+
+        </div>
+
+      
     </div>
+
 </div>
