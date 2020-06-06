@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PostModel } from './post-model';
+import { CreatePostPayload } from '../post/create-post/create-post.payload';
 
 @Injectable({
   providedIn: 'root'
@@ -14,17 +15,9 @@ export class PostService {
   getAllPosts(): Observable<Array<PostModel>> {
     return this.http.get<Array<PostModel>>('http://www.localhost:8080/api/posts/')
   }
-
   
-  // getAllPosts2(){
-    
-  // var reqHeader = new HttpHeaders({ 
-    
-  //   'Content-Type': 'application/json',
-  //   'Authorization': 'Bearer ' + JSON.parse(this.authService.getJwtToken())
-  // });
-  // console.log('xxxxxx'+reqHeader);
+  createPost(postPayload: CreatePostPayload): Observable<any> {
+    return this.http.post<Array<PostModel>>('http://www.localhost:8080/api/posts/', postPayload)
+  }
 
-  // return this.http.get<Array<PostModel>>('http://www.localhost:8080/api/posts/', { headers: reqHeader });
-  // }
 }
