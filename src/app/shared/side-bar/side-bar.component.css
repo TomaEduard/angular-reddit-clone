@@ -47,3 +47,10 @@
     line-height: 20px;
     color: #1c1c1c;
 }
+
+.slider {
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 90px !important;
+    z-index: 1;
+}

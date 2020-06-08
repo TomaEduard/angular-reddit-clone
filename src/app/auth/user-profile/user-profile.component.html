@@ -1,0 +1,56 @@
+<div class="container pt-3">
+    
+    <div *ngIf="postLength==undefined">
+        Welcome <b>{{name}}</b>.<br /> You have posted <b>0 </b> time(s) and commented
+        <b>{{commentLength}}</b> time(s).
+        You can check your post and comment history below.
+    </div>
+
+    <div *ngIf="postLength!==undefined">
+        Welcome <b>{{name}}</b>.<br /> You have posted <b>{{postLength}}</b> time(s) and commented
+        <b>{{commentLength}}</b> time(s).
+        You can check your post and comment history below.
+    </div>
+
+    <hr />
+
+
+    <!-- Posts Section -->
+    <div>
+        <b>Your Posts:</b>
+    </div>
+    <br />
+    <div *ngIf="postLength==undefined">
+        <p>You have no post(s)</p>
+    </div>
+
+    <app-post-tile [posts]="posts"></app-post-tile>
+
+
+    <!-- Comments Section -->
+    <br />
+    <br />
+    <hr />
+    <div>
+        <b>Your Comments:</b>
+    </div>
+    <br />
+
+    <div *ngFor="let comment of comments">
+        <div class="comment">
+            <div class="username">
+                <a routerLink="/user/comment.username">{{comment.userName}}</a>
+            </div>
+
+            <div>
+                <p>{{comment.duration}}</p>
+            </div>
+
+            <b>{{comment.text}}</b>
+        </div>
+
+        <hr />
+    </div>
+    
+</div>
+  

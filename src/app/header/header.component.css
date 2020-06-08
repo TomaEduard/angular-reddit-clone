@@ -47,6 +47,7 @@ header{
 
 .sign-up:hover{
     opacity: 0.6;
+    color: white !important;
 }
 
 .userdetails{    

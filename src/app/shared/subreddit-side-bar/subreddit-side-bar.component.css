@@ -17,3 +17,10 @@
 .sidebar-view-subreddit {
     height: 280px;
 }
+
+.slider {
+    position: -webkit-sticky;
+    position: sticky !important;
+    top: 342px !important;
+    z-index: 1;
+}

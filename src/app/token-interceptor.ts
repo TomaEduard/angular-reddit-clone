@@ -11,6 +11,7 @@ import { LoginResponse } from './auth/login/login-response.payload';
 export class TokenInterceptor implements HttpInterceptor {
 
     isTokenRefreshing = false;
+    // we will assign value of refresh token to it
     refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
 
     constructor(public authService: AuthService) { }
@@ -24,7 +25,10 @@ export class TokenInterceptor implements HttpInterceptor {
         const jwtToken = this.authService.getJwtToken();
 
         if (jwtToken) {
-            return next.handle(this.addToken(req, jwtToken)).pipe(catchError(error => {
+            // add token to header
+            return next.handle(this.addToken(req, jwtToken))
+                // catch 403 forbidden error for call refresh token
+                .pipe(catchError(error => {
                 if (error instanceof HttpErrorResponse
                     && error.status === 403) {
                     return this.handleAuthErrors(req, next);
@@ -34,11 +38,10 @@ export class TokenInterceptor implements HttpInterceptor {
             }));
         }
         return next.handle(req);
-
     }
 
-    private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler)
-        : Observable<HttpEvent<any>> {
+    private handleAuthErrors(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        // if we try to make http call in the same time the auth token is expire
         if (!this.isTokenRefreshing) {
             this.isTokenRefreshing = true;
             this.refreshTokenSubject.next(null);
@@ -55,10 +58,11 @@ export class TokenInterceptor implements HttpInterceptor {
         } else {
             return this.refreshTokenSubject.pipe(
                 filter(result => result !== null),
+                // accept the first entry
                 take(1),
+                // take the new token and use it to make the request
                 switchMap((res) => {
-                    return next.handle(this.addToken(req,
-                        this.authService.getJwtToken()))
+                    return next.handle(this.addToken(req, this.authService.getJwtToken()))
                 })
             );
         }

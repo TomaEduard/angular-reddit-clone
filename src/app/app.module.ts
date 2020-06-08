@@ -23,7 +23,10 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subreddits.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 
-import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
+// module for bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewPostComponent } from './post/view-post/view-post.component';
+import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-b
     SubredditSideBarComponent,
     CreateSubredditComponent,
     CreatePostComponent,
-    ListSubredditsComponent
+    ListSubredditsComponent,
+    ViewPostComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,7 @@ import {NgbModule, NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-b
     FontAwesomeModule,
     EditorModule,
     NgbModule,
-    // NgbPaginationModule, 
-    // NgbAlertModule
-    // NgbModule
+
   ],
   providers: [
     {
