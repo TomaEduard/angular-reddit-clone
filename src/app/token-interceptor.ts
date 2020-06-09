@@ -24,8 +24,9 @@ export class TokenInterceptor implements HttpInterceptor {
         }
         const jwtToken = this.authService.getJwtToken();
 
+        // verufy if have a valid token to the ls
         if (jwtToken) {
-            // add token to header
+            // add token to the authorization header
             return next.handle(this.addToken(req, jwtToken))
                 // catch 403 forbidden error for call refresh token
                 .pipe(catchError(error => {
@@ -37,6 +38,8 @@ export class TokenInterceptor implements HttpInterceptor {
                 }
             }));
         }
+        // send a request without any headers/null/undefined on it to prevent unnecessary errors in backend
+        // beacause we have some routes unsecured .permitAll()
         return next.handle(req);
     }
 
