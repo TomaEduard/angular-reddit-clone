@@ -16,10 +16,15 @@ export class HeaderComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
+
+    // this method also works after refresh but the header changes only if 
+    // the page is refreshed immediately after login
     // this.isLoggedIn = this.authService.isLoggedIn();
     // this.username = this.authService.getUserName();
 
-    // if we subscribe with emitter of auth.service variabile 
+    // if we subscribe with emitter of auth.service variabile from login method the page
+    // and if refreshed, the data is lost and the header appears with login and sign up
+    // although we are logged in and have the data in ls
     this.authService.loggedIn.subscribe((data: boolean) => this.isLoggedIn = data);
     this.authService.username.subscribe((data: string) => this.username = data);
   }
