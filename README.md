@@ -1,28 +1,5 @@
-# AngularRedditClone
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-# angular-reddit-clone
+![1](https://user-images.githubusercontent.com/45673679/84306642-6d79ce80-ab64-11ea-9378-779500b1b577.png)
+![2](https://user-images.githubusercontent.com/45673679/84306650-7074bf00-ab64-11ea-9866-1fa5c90976d2.png)
+![3](https://user-images.githubusercontent.com/45673679/84306652-7074bf00-ab64-11ea-93f4-84d8e42e08cb.png)
+![4](https://user-images.githubusercontent.com/45673679/84306654-710d5580-ab64-11ea-91bc-e826f19b184f.png)
+![5](https://user-images.githubusercontent.com/45673679/84306656-710d5580-ab64-11ea-8dcf-3fe740e17105.png)
